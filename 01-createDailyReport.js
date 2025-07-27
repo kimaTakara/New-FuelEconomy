@@ -43,7 +43,7 @@ function createDailyReport() {
   } catch (e) {
     // getInitRecordで発生したエラーを捕捉し、ユーザーに通知して処理を中断
     Logger.log("エラーが発生しました: " + e.message);
-    ui.alert("エラー", e.message, SpreadsheetApp.ButtonSet.OK);
+    ui.alert("初期データの日付欄の値が正常ではありません。確認してください。");
     return; // メイン関数の実行を停止
   }
 

@@ -23,9 +23,12 @@ function getInitRecord(ss) {
     .flat();
 
   // 日付の有効性をチェック
+  const rawDateValue = initData[INITIAL_COLUMN_INDICES.date];
   const dateObj = new Date(rawDateValue);
   if (isNaN(dateObj.getTime())) {
-    throw new Error(`「初期データ」シートの日付が不正です: '${rawDateValue}'。有効な日付形式か確認してください。`);
+    throw new Error(
+      `「初期データ」シートの日付が不正です: '${rawDateValue}'。有効な日付形式か確認してください。`
+    );
   }
 
   return {
