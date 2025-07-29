@@ -51,7 +51,7 @@ function createDailyReport() {
   /** @type {LogEntry[]} */
   const logs = getLogs(ss);
 
-  // 日付のチェック
+  // 初期データの日付と走行記録先頭の日付がエラーの場合は中断する
   if (initRecord.date !== logs[0].date) {
     ui.alert("初期データと走行記録の日付が一致しません。処理を中断します。");
     return;

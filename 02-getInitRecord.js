@@ -5,19 +5,20 @@
 function getInitRecord(ss) {
   // 各データのインデックス(0始まり)
   const INITIAL_COLUMN_INDICES = {
-    date: 0,
-    price: 1,
-    economy: 2,
-    distance: 3,
+    id:0, // 使わない
+    date: 1,
+    price: 2,
+    economy: 3,
+    distance: 4,
   };
 
   const initRecordSheet = ss.getSheetByName("初期データ");
   const initData = initRecordSheet
     .getRange(
       2,
-      INITIAL_COLUMN_INDICES.date + 2, // 日時は2行目から
+      INITIAL_COLUMN_INDICES.date + 1,
       1,
-      INITIAL_COLUMN_INDICES.distance + 2 // 距離は5行目まで
+      INITIAL_COLUMN_INDICES.distance + 1
     )
     .getValues()
     .flat();
